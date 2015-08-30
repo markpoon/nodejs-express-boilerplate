@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-express-boilerplate",
+  "version": "0.0.0",
+  "description": "cluster express boilerplate with dev and producation options",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "mark poon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
