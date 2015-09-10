@@ -1,13 +1,17 @@
-express_cluster = require('express-cluster')
-cluster = require('cluster')
-require('./logging')
+express_cluster = require 'express-cluster'
+cluster = require 'cluster'
 
 if cluster.isMaster
-else if cluster.isChild
+  console.log "master!"
+else if cluster.isWorker
+  console.log "child!"
 else
-return
+  console.log "alien!"
 
-express_cluster(w)->
-  require('./app')
-  return
+express_cluster(
+  (w)->
+    require './app'
+    return
+, {verbose: true}
+)
 
